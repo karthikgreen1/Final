@@ -1,7 +1,24 @@
-- name: test change
+---
+- hosts: localhost
+  gather_facts: False
+  tasks:
+  - name: Create a ticket
     snow_record:
       username: admin
-      password: Welsnow
+      password: Welsnow321#
+      instance: dev73962
+      state: present
+      table: change_request
+      data:
+        short_description: "Unix change created from ansible 03/03"
+        requested_by: "System Administrator"
+    register: new_change
+  - debug:
+      msg: "New change has been created : {{ new_change.record.number }} "
+  - name: test change
+    snow_record:
+      username: admin
+      password: Welsnow321#
       instance: dev73962
       state: present
       table: change_task
