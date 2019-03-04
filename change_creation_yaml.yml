@@ -7,7 +7,27 @@
   - name: Create a change ticket in SNOW 
     register: new_change_request
     snow_record:
-      data:   
+      data:
+        requested_by: "{{item.Requested_By}}"
+        u_environment: "{{item.Environment}}"
+        category: "{{item.Category}}"
+        cmdb_ci: "{{item.CI}}"
+        Type: "{{item.Patching_Type}}"
+        assignment_group: "{{item.Assigment_Group}}"
+        assigned_to: "{{item.Assigned_To}}"
+        u_change_coordinator: "{{item.Change_Coordinator}}"
+        short_description: "{{item.Short_Description}}"
+        description: "{{item.Description}}"
+        u_technical_approver: "{{item.Technical_Approver}}"
+        start_date: "{{item.Release_date}}"
+        type: "{{item.Patching_Type}}"
+        implementation_plan: "{{item.Implemention_Plan}}"
+        backout_plan: "{{item.BackoutPlan}}"
+        test_plan: "{{item.ValidationPlan}}"
+        u_director_approval: "{{item.Director_Approver}}"
+        u_product_approval: "{{item.Product_Approver}}"
+        u_sr_director_approval: "{{item.Sr_Director_Approver}}"
+        u_vp_approval: "{{item.VP_Approver}}"
       instance: dev34680
       password: 009@Shreya
       state: present
