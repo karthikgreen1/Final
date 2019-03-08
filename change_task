@@ -6,7 +6,7 @@
     snow_record:
       username: admin
       password: 009@Shreya
-      instance: dev34680
+      instance: dev54182
       state: present
       table: change_request
       data:
@@ -19,7 +19,7 @@
     snow_record:
       username: admin
       password: 009@Shreya
-      instance: dev34680
+      instance: dev54182
       state: present
       table: change_task
       data:
